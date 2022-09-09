@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.88.1">
+
+  <title>Learn C/C++</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+  </style>
+
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script>
+  $(function () {
+    $('#mac').on('shown.bs.collapse', function (e) {
+      $('html,body').animate({
+        scrollTop: $('#mac').offset().top -80
+      }, 0);
+    });
+    $('#windows').on('shown.bs.collapse', function (e) {
+      $('html,body').animate({
+        scrollTop: $('#windows').offset().top -80
+      }, 0);
+    });
+    $('#linux').on('shown.bs.collapse', function (e) {
+      $('html,body').animate({
+        scrollTop: $('#linux').offset().top -80
+      }, 0);
+    });
+    $('#chrome').on('shown.bs.collapse', function (e) {
+      $('html,body').animate({
+        scrollTop: $('#chrome').offset().top -80
+      }, 0);
+    });
+    $('#android').on('shown.bs.collapse', function (e) {
+      $('html,body').animate({
+        scrollTop: $('#android').offset().top -80
+      }, 0);
+    });
+    $('#ios').on('shown.bs.collapse', function (e) {
+      $('html,body').animate({
+        scrollTop: $('#ios').offset().top -80
+      }, 0);
+    });
+
+  });
+</script>
+
+<main>
+  <h1 class="visually-hidden">Heroes examples</h1>
+
+  <div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="img/clogo.png" alt="" width="144" height="144">
+    <h1 class="display-5 fw-bold">Code in C/C++</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Easily and quickly learn how to write, compile, link and run C/C++ on your platform of choice.</p>
+        <a class="btn btn-primary btn-lg px-4 gap-3" href="#coding">Get Started</a>
+        <a class="btn btn-outline-secondary btn-lg px-4" href="#about">About</a>
+    </div>
+  </div>
+
+  <div class="b-example-divider"></div>
+
+  <div class="px-4 pt-5 my-5 text-center border-bottom" id="coding">
+    <h1 class="display-4 fw-bold">Select an OS</h1>
+    <div class="container">
+      <div class="row justify-content-around px-4 pt-5 pb-5 gy-5">
+        <div class="card pt-4" style="width: 18rem;" >
+          <img class="card-img" src="img/windows.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Microsoft Windows</h5>
+            <p class="card-text">(Works for Windows 10/11)</p>
+            <a href="#windows" class="btn btn-primary" data-bs-toggle="collapse" href="#windows" role="button" aria-expanded="false" aria-controls="windows">Continue</a>
+          </div>
+        </div>
+        <div class="card pt-4" style="width: 18rem;" >
+          <img class="card-img" src="img/macos.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">MacOS</h5>
+            <p class="card-text">(Works for MacOS 10.6 and higher. ARM/Intel)</p>
+            <a href="#mac" class="btn btn-primary" data-bs-toggle="collapse" href="#mac" role="button" aria-expanded="false" aria-controls="mac">Continue</a>
+          </div>
+        </div>
+        <div class="card pt-4" style="width: 18rem;" >
+          <img class="card-img" src="img/linux.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Linux</h5>
+            <p class="card-text">(Instructions for most major distros, Ubuntu/Debian, Fedora, and Arch Linux. ARM/Intel)</p>
+            <a href="#linux" class="btn btn-primary" data-bs-toggle="collapse" href="#linux" role="button" aria-expanded="false" aria-controls="linux">Continue</a>
+          </div>
+        </div>
+        <div class="card pt-4" style="width: 18rem;" >
+          <img class="card-img" src="img/chromeos.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">ChromeOS</h5>
+            <p class="card-text">(Works on almost all chromebooks. Requires factory reset)</p>
+            <a href="#chrome" class="btn btn-primary" data-bs-toggle="collapse" href="#chrome" role="button" aria-expanded="false" aria-controls="chrome">Continue</a>
+          </div>
+        </div>
+        <div class="card pt-4" style="width: 18rem;" >
+          <img class="card-img" src="img/android.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Android</h5>
+            <p class="card-text">(Android 4.4 or higher suppored)</p>
+            <a href="#android" class="btn btn-primary" data-bs-toggle="collapse" href="#android" role="button" aria-expanded="false" aria-controls="android">Continue</a>
+          </div>
+        </div>
+
+        <div class="card pt-4" style="width: 18rem;" >
+          <img class="card-img" src="img/ios.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">iOS</h5>
+            <p class="card-text">(Works on 0% of all unmodified iPhone devices.)</p>
+            <a href="#ios" class="btn btn-primary" data-bs-toggle="collapse" href="#ios" role="button" aria-expanded="false" aria-controls="ios">Continue</a>
+          </div>
+        </div>
+
+        <div class="card pt-4" style="width: 18rem;" >
+          <img class="card-img" src="img/nintendoswitch.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Nintendo Switch</h5>
+            <p class="card-text">(Requires unpatched device)</p>
+            <a href="#switch" class="btn btn-primary" data-bs-toggle="collapse" href="#switch" role="button" aria-expanded="false" aria-controls="switch">Continue</a>
+          </div>
+        </div>
+        <div class="card pt-4" style="width: 18rem;" >
+          <img class="card-img" src="img/steamdeck.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Steam Deck</h5>
+            <p class="card-text">(Works on all systems.)</p>
+            <a href="#steamos" class="btn btn-primary" data-bs-toggle="collapse" href="#steamos" role="button" aria-expanded="false" aria-controls="steamos">Continue</a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="collapse" id="steamos">
+      <div class="card card-body">
+        <h1>Good news!
+        </h1>
+        <p>SteamOS3 ships with GCC already installed. You are clear to proceed to the Arch Linux instructions for the Steam Deck!</p>
+      </div>
+    </div>
+    <div class="collapse" id="switch">
+      <div class="card card-body">
+        <h1>Switchroot Ubuntu
+        </h1>
+        <figure class="figure">
+          <img src="img/switch/1.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+          <figcaption class="figure-caption">Switch running Arch Linux (with KDE Desktop environment)</figcaption>
+        </figure>
+
+        <p>The Nintendo Switch itself has it's own port of Ubuntu, allowing users to run Linux directly on the system! <b>Only systems from before 2019 are supported.</b></p>
+        <p>To see if your console is compatible, <a href="https://damota.me/ssnc/checker">Click here.</a></p>
+        <p>If your switch is compatible, excellent! You can proceed to the next step over at the Switchroot website. That website will always have the most up-to-date information on Switch modding, so it's the best resource for this information.</p>
+        <a href="https://wiki.switchroot.org/en/Linux/Ubuntu-Install-Guide" class="btn btn-primary">Switchroot Ubuntu</a>
+        <h2>Once you've successfully booted Linux on Switch, you can proceed to the Linux section under Ubuntu!</h2>
+      </div>
+    </div>
+
+    <div class="collapse" id="chrome">
+        <div class="card card-body">
+          <h1>Enabling Linux Mode in ChromeOS
+          </h1>
+          <p>Enabling Linux on ChromeOS is really quite easy. First off, open Settings and locate Developer options</p>
+          <figure class="figure">
+            <img src="img/chrome/1.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+            <figcaption class="figure-caption">Developer options on ChromeOS. Image Credit <a href="https://www.xda-developers.com/linux-apps-chrome-os/">XDA Developers</a></figcaption>
+          </figure>
+          <p>Turn on "Linux Development Environment" and follow the on-screen instructions.</p>
+          <h2>You can now follow the Linux portion of this tutorial under the distro Debian!</h2>
+          <a class="btn btn-primary btn-lg px-4 gap-3" href="https://support.google.com/chromebook/answer/9145439?hl=en">For more information, click here.</a>
+
+        </div>
+      </div>
+    <div class="collapse" id="ios">
+      <div class="card card-body">
+        <h1>Absolutely not.
+        </h1>
+        <p>Yes, little known fact: Apple does not allow ANY external code on their devices that has not been passed through XCode and their maintainence checks in some way, shape, or form.</p>
+        <figure class="figure">
+          <img src="img/ios/1.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+          <figcaption class="figure-caption">Consumer and Developer support at it's finest.</figcaption>
+        </figure>
+        <p>The App Store is a curated location. But, that doesn't necessarily mean Apple can reduce access to ONLY the App Store in their operating system.</p>
+        <a href="https://www.epicgames.com/site/en-US/free-fortnite-faq" class="btn btn-primary">Click here for more info</a>
+        <p>(The #FreeFortnite hearings went literally nowhere by the way, so ultimately the lawsuit was basically useless in letting Apple allow developers more freedom with their operating system.)</p>
+
+      </div>
+    </div>
+
+    <div class="collapse" id="android">
+      <div class="card card-body">
+        <h1>Writing C/C++ on android
+        </h1>
+        <p>C on Android is just about the easiest way to quickly make very simple CLI based applications. To begin, download <a href="https://play.google.com/store/apps/details?id=ru.iiec.cxxdroid&hl=en_US&gl=US">CXXDroid</a> from the Play Store</p>
+        <figure class="figure">
+          <img src="img/android/1.png" class="figure-img img-fluid rounded" alt="..." width="250" height="150">
+          <figcaption class="figure-caption">CXXDroid Play Store listing</figcaption>
+        </figure>
+        <p>After installation, there should be a few quick questions about your use case. Answer as you see fit, but don't forget to explain what kind of files you're using. For the sake of this website, we focus on single file compilation.</p>
+        <figure class="figure">
+          <img src="img/android/2.png" class="figure-img img-fluid rounded" alt="..." width="250" height="150">
+          <figcaption class="figure-caption">CXXDroid file type selection. Pick carefully!</figcaption>
+        </figure>
+        <p>Congrats, you're now ready to start coding! Don't forget to hit the Play button towards the bottom to run your code.</p>
+        <figure class="figure">
+          <img src="img/android/3.png" class="figure-img img-fluid rounded" alt="..." width="250" height="150">
+          <figcaption class="figure-caption">Respectfully, coding.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="collapse" id="linux">
+        <div class="card card-body">
+          <h1>GNU Compiler Collection</h1>
+          <figure class="figure">
+            <img src="img/linux/1.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+            <figcaption class="figure-caption">GCC version output on Fedora</figcaption>
+          </figure>
+          <p>Unsurprisingly, compiling C on Linux is by far the easiest method. No external applications are necessary, in some cases, you might already have the right tools installed! If <code>gcc -v</code> returns an error, however, please continue to these next steps.</p>
+          <h1>Installing GCC</h1>
+          <p>To install GCC, please pick your distro from below.</p>
+          <div class="accordion" id="alinux">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="alinux-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#alinux-collapseOne" aria-expanded="false" aria-controls="alinux-collapseOne">
+                  Debian/Ubuntu/Linux Mint/Raspberry Pi OS/All other Debian based Distros
+                </button>
+              </h2>
+              <div id="alinux-collapseOne" class="accordion-collapse collapse" aria-labelledby="alinux-headingOne" data-bs-parent="#accordionalinuxExample">
+                <div class="accordion-body">
+                  <figure class="figure">
+                    <img src="img/linux/2.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+                    <figcaption class="figure-caption">Installing <code>build-essential</code> under Ubuntu 20.04</figcaption>
+                  </figure>
+                  <p>To install GCC and all other required C resources, please run the following commands.</p>
+                  <kbd>sudo apt update</kbd> <p>followed by</p>
+                  <kbd>sudo apt install build-essential</kbd>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="alinux-headingtwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#alinux-collapsetwo" aria-expanded="false" aria-controls="alinux-collapsetwo">
+                  Arch Linux/Manjaro/SteamOS3/All other Arch based distros
+                </button>
+              </h2>
+              <div id="alinux-collapsetwo" class="accordion-collapse collapse" aria-labelledby="alinux-headingtwo" data-bs-parent="#accordionalinuxExample">
+                <div class="accordion-body">
+                  <figure class="figure">
+                    <img src="img/linux/4.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+                    <figcaption class="figure-caption">Installing <code>base-devel</code> under Arch Linux</figcaption>
+                  </figure>
+                  <p>To install GCC and all other required C resources, please run the following commands.</p>
+                  <kbd>sudo pacman -S base-devel</kbd>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="alinux-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#alinux-collapseThree" aria-expanded="false" aria-controls="alinux-collapseThree">
+                  Fedora/Red Hat Linux/All other Fedora Based Distros
+                </button>
+              </h2>
+              <div id="alinux-collapseThree" class="accordion-collapse collapse" aria-labelledby="alinux-headingThree" data-bs-parent="#accordionalinuxExample">
+                <div class="accordion-body">
+                  <figure class="figure">
+                    <img src="img/linux/3.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+                    <figcaption class="figure-caption">Installing <code>development-tools</code> under Fedora Workstation 36</figcaption>
+                  </figure>
+                  <p>To install GCC and all other required C resources, please run the following commands.</p>
+                  <kbd>sudo dnf install @development-tools</kbd>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h1>Compiling under Linux</h1>
+          <p>Now that GCC is installed, you're ready to start compiling your code for running. You can edit the code using any editor, but here's a couple favorites.</p>
+          <div class="container">
+            <div class="row justify-content-around px-4 pt-5 pb-5 gy-5">
+            <div class="card pt-4" style="width: 18rem;" >
+            <img class="card-img" src="img/vscode.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">VSCode</h5>
+              <p class="card-text">Open Source from Microsoft</p>
+              <a href="https://code.visualstudio.com/" class="btn btn-primary">Homepage</a>
+            </div>
+          </div>
+          <div class="card pt-4" style="width: 18rem;" >
+            <img class="card-img" src="img/sublime.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Sublime Text</h5>
+              <p class="card-text">Closed Source</p>
+              <a href="https://www.sublimetext.com/" class="btn btn-primary">Homepage</a>
+            </div>
+          </div>
+          <div class="card pt-4" style="width: 18rem;" >
+            <img class="card-img" src="img/atom.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Atom</h5>
+              <p class="card-text">Open Source</p>
+              <a href="https://atom.io/" class="btn btn-primary">Homepage</a>
+            </div>
+          </div>
+          <p>Once you've picked your text editor of choice, you can start editing code! </p>
+              <h1>Compiling and running code</h1>
+              <p>Okay, hope you haven't closed that command prompt! Now you can begin to compile your code. To compile your <code>main.c</code> file, run the following command</p>
+              <pre><kbd>gcc main.c</kbd></pre>
+              <p>Upon compilation completion, you can now run the exported file <code>a.out</code> like so.</p>
+              <pre><kbd>./a.out</kbd></pre>
+              <figure class="figure">
+                <img src="img/linux/5.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+                <figcaption class="figure-caption">Running GCC under Ubuntu.</figcaption>
+              </figure>
+              <p>You can also run the compilation to export the object with a particular file name.</p>
+              <pre><kbd>gcc main.c -o main</kbd></pre>
+              <p>To run this code, you only need to change the execution statement.</p>
+              <pre><kbd>./main</kbd></pre>
+            </div>
+        </div>
+      </div>
+
+    </div>
+      <div class="collapse" id="windows">
+        <div class="card card-body">
+          <h1>Installing Visual Studio 2022</h1>
+          <figure class="figure">
+            <img src="img/windows/1.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+            <figcaption class="figure-caption">Visual Studio 2022 Community Edition Download page. Be sure to get the Community Edition!</figcaption>
+          </figure>
+          <p>First, you should download Visual Studio 2022 from Microsoft's website. <b>Ensure that you download the Community Edition of Visual Studio, as this covers instructions for that.</b></p>
+        </div>
+      </div>
+      <div class="collapse" id="mac">
+        <div class="card card-body">
+
+          <h1>Installing XCode</h1>
+          <p>There's a couple means of installing XCode on macOS. Please pick your prefered method. I highly recommend installing from the app store.</p>
+          <div class="accordion" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  Downloading from the App Store (Recommended)
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <figure class="figure">
+                    <img src="img/macinstructions/1.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+                    <figcaption class="figure-caption">Locate XCode in the App store.</figcaption>
+                  </figure>
+                  <p>First, find XCode in the app store, and install it. XCode is available on most Macs running at least MacOS 10.6</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Downloading manually from Apple
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <figure class="figure">
+                    <img src="img/macinstructions/1a.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+                    <figcaption class="figure-caption">XCode Download button on Apple's developer website.</figcaption>
+                  </figure>
+                  <p>Alternatively, for Macs that cannot access the App Store or are too outdated, you can optionally download XCode from Apple's website. <b>You should pick XCode 13. XCode 14 is still not released, and therefore not suitable for this tutorial.</b> (Updated 9/8/2022)</p>
+                  <p>You will need to log in to your Apple ID to access as well.</p>
+                  <a href="https://developer.apple.com/download/applications/" class="btn btn-primary">Download</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h1>Creating a new project in XCode</h1>
+          <figure class="figure">
+            <img src="img/macinstructions/2.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+            <figcaption class="figure-caption">XCode splash screen.</figcaption>
+          </figure>
+          <p>After installation, launching XCode should result in this screen. Click the <b>Create a new XCode project</b> option.</p>
+          <figure class="figure">
+            <img src="img/macinstructions/3.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+            <figcaption class="figure-caption">XCode project type selection. Ensure to pick MacOS and Console application.</figcaption>
+          </figure>
+          <p>After creating a new project, you should be presented with a new screen. In this screen, you should pick <b>macOS</b> as the platform and <b>Command Line Application</b> as the type.</p>
+          <figure class="figure">
+            <img src="img/macinstructions/3.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+            <figcaption class="figure-caption">XCode project configuration. Ensure to pick C or C++ as your project.</figcaption>
+          </figure>
+          <p>After selecting a project type, you will be presented with a setup screen. In this screen, you should pick <b>C</b> or <b>C++</b> as the language. Project names can have any type of spelling, including spaces and forbidden characters. The <i>Team</i>, <i>Organization Identifier</i>, and <i>Bundle Identifier</i> options do not matter, and only apply to App Store application and other distribution necessities.</p>
+          <figure class="figure">
+            <img src="img/macinstructions/4.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+            <figcaption class="figure-caption">XCode project configuration. Ensure to pick C or C++ as your project.</figcaption>
+          </figure>
+          <p>After selecting a project type, you will be presented with a setup screen. In this screen, you should pick <b>C</b> or <b>C++</b> as the language. Project names can have any type of spelling, including spaces and forbidden characters. The <i>Team</i>, <i>Organization Identifier</i>, and <i>Bundle Identifier</i> options do not matter, and only apply to App Store application and other distribution necessities.</p>
+          <figure class="figure">
+            <img src="img/macinstructions/5.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+            <figcaption class="figure-caption">XCode sidebar. Don't forget to pick your main file to start coding!</figcaption>
+          </figure>
+          <p>Congratulations! You now have a C project on your Mac, and can begin coding.</p>
+          <figure class="figure">
+            <img src="img/macinstructions/6.png" class="figure-img img-fluid rounded" alt="..." width="500" height="500">
+            <figcaption class="figure-caption">Code box, with the terminal below. Don't forget the terminal is under the code!</figcaption>
+          </figure>
+          <p>Don't forget, the terminal in XCode is located under the regular code window, and is somewhat easy to miss.</p>
+        </div>
+      </div>
+  </div>
+
+    </div>
+  </div>
+
+  <div class="b-example-divider"></div>
+
+  <div class="bg-dark text-secondary px-4 py-5 text-center" id="about">
+    <div class="py-5">
+      <h1 class="display-5 fw-bold text-white">Made with ❤ by Kxfan</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="fs-5 mb-4">I made this website to help people in beginner C/C++ classes compile their code easier on multiple platforms. I also wanted to practice with Bootstrap so boom, killed two birds with one stone.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a href="https://github.com/knucklesfan/" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">My Github</a>
+          <a href="button" class="btn btn-outline-light btn-lg px-4">Secondary</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="b-example-divider mb-0"></div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>
